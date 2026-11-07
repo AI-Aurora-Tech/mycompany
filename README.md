@@ -26,6 +26,22 @@ Para gerar a versão de produção (pasta `dist/`, pode ser publicada em qualque
 npm run build
 ```
 
+## Publicar na Vercel
+
+O projeto já vem configurado (`vercel.json`): build com `npm run build`, saída em `dist/`
+e redirecionamento de todas as rotas para o app (assim links diretos como `/estoque` e o F5 funcionam).
+
+1. Em [vercel.com/new](https://vercel.com/new), importe o repositório do GitHub.
+2. A Vercel detecta tudo sozinha — é só clicar em **Deploy**.
+3. A cada push na `main` a Vercel publica uma nova versão; cada pull request ganha um link de pré-visualização.
+
+> Como os dados ficam no navegador, cada pessoa/computador que abrir o link verá
+> seus próprios dados (começando pelos dados de exemplo). Para dados compartilhados
+> entre todos, é necessário o Supabase (veja abaixo).
+
+Quando o Supabase entrar, as chaves (`VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`)
+devem ser cadastradas em **Project Settings → Environment Variables** na Vercel.
+
 ## Telas
 
 | Tela | O que faz |
